@@ -8,7 +8,7 @@ y = list(map(int, input()))[::-1]
 print(x)
 print(y)
 
-if x >= y:
+if len(x) >= len(y):
     big = x
     small = y
 else:
@@ -38,11 +38,11 @@ for i in range(len(small)):
 if inc == 1:
     summa.append(1)
     # print(summa[len(small)])
-space = ' '
+space = ''
 count = 0
 for i in summa[::-1]:
-    if count == len(summa)-1:
-        space = ''
-    count = count + 1
+    # if count == len(summa)-1:
+    #     space = ''
+    # count = count + 1
     print(i, end=space)
 
