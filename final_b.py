@@ -1,9 +1,8 @@
-# 36599776
+# 36848956
 
 
 def hasCycle(head):
-    slow_node = head
-    fast_node = head
+    slow_node, fast_node = head, head
     while True:
         if slow_node.next is None:
             return False

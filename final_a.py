@@ -1,12 +1,10 @@
-# 36598027
-calc = {
+# 36847993
+CALC = {
     '+': (lambda a, b: b + a),
     '-': (lambda a, b: b - a),
     '*': (lambda a, b: b * a),
     '/': (lambda a, b: b // a),
 }
-
-expression = list(input().split())
 
 
 class Stack:
@@ -23,14 +21,19 @@ class Stack:
             raise IndexError('pop from empty stack')
 
 
-if __name__ == "__main__":
+def get_result(expression):
     list_nums = Stack()
 
     for i in expression:
-        if i not in calc:
+        if i not in CALC:
             list_nums.push(i)
         else:
-            x = calc[i](list_nums.pop(), list_nums.pop())
+            x = CALC[i](list_nums.pop(), list_nums.pop())
             list_nums.push(x)
 
-    print(list_nums.pop())
+    return list_nums.pop()
+
+
+if __name__ == "__main__":
+    expression = list(input().split())
+    print(get_result(expression))
