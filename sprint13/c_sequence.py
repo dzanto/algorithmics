@@ -1,20 +1,18 @@
 short_string = list(input())
 long_string = list(input())
-# print(short_string)
-# print(long_string)
+
 count = 0
-yes = False
+new_string = []
+pop_string = short_string.copy()
 for i in long_string:
-    if i == short_string[count]:
-        print(i, count)
-        if count == len(short_string)-1:
+    if pop_string == []:
+        print(True)
+        break
+    if i == pop_string[0]:
+        new_string.append(i)
+        pop_string.pop(0)
+        if short_string == new_string:
             print(True)
-            yes = True
             break
-        count += 1
-        # if count == len(short_string)-1:
-        #     break
-print('end for')
-print(count)
-if count <= len(short_string)-1 and yes is not True:
+if short_string != new_string:
     print(False)
