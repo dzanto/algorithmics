@@ -1,18 +1,27 @@
-CALC = {
-    '(': (lambda stack: stack.push),
-    'peek': (lambda stack: stack.peek()),
-    'size': (lambda stack: stack.size()),
+brackets_dict = {
+    '(': ')',
+    '{': '}',
+    '[': ']',
 }
+
+
 def solution(bracket_seq):
     stack = []
+    open_br = ['(', '{', '[']
     for bracket in bracket_seq:
-        if bracket == '(' or '{' or '[':
+        if bracket in open_br:
             stack.append(bracket)
         else:
-            stack.pop()
+            if bracket == brackets_dict[stack.pop()]:
+                continue
+            else:
+                return False
+    if stack == []:
+        return True
+    else:
+        return False
 
 
 if __name__ == "__main__":
     bracket_seq = list(input())
-    print(bracket_seq)
-    solution(bracket_seq)
+    print(solution(bracket_seq))
