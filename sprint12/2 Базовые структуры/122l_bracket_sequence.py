@@ -7,11 +7,12 @@ brackets_dict = {
 
 def solution(bracket_seq):
     stack = []
-    open_br = ['(', '{', '[']
     for bracket in bracket_seq:
-        if bracket in open_br:
+        if bracket in brackets_dict:
             stack.append(bracket)
         else:
+            if stack == []:
+                return False
             if bracket == brackets_dict[stack.pop()]:
                 continue
             else:
