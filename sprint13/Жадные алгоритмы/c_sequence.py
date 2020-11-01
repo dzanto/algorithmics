@@ -1,18 +1,15 @@
-short_string = list(input())
-long_string = list(input())
+def solution(short_string, long_string):
+    for i in range(-1, -len(long_string)-1, -1):
+        if short_string == []:
+            return True
+        if long_string[i] == short_string[-1]:
+            short_string.pop(-1)
+        if short_string == []:
+            return True
+    return False
 
-count = 0
-new_string = []
-pop_string = short_string.copy()
-for i in long_string:
-    if pop_string == []:
-        print(True)
-        break
-    if i == pop_string[0]:
-        new_string.append(i)
-        pop_string.pop(0)
-        if short_string == new_string:
-            print(True)
-            break
-if short_string != new_string:
-    print(False)
+
+if __name__ == '__main__':
+    short_string = list(input())
+    long_string = list(input())
+    print(solution(short_string, long_string))
