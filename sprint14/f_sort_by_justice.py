@@ -1,28 +1,33 @@
 def quicksort(array):
+
     for i in range(len(array)-1):
         tmp = array[i]
-        print(array[i] % 2, i % 2)
+        # print(tmp, array[i] % 2, i % 2)
+        # print(array)
         if array[i] % 2 == 0 and (i % 2 == 0 or i == 0):
             continue
         elif array[i] % 2 == 1 and i % 2 == 1:
             continue
-        elif array[i] % 2 == 1 and i % 2 == 1:
-            print(1, i)
-            for j in range(i+1, len(array)-1):
+        elif array[i] % 2 == 1 and i % 2 == 0:
+            for j in range(i, len(array)):
                 if array[j] % 2 == 1:
-                    continue
+                    tmpa = array[j]
+                    array[j] = tmp
+                    tmp = tmpa
                 else:
                     array[i] = array[j]
                     array[j] = tmp
                     break
-        elif array[i] % 2 == 0 and i % 2 == 0:
-            print(2, i)
-            for j in range(i + 1, len(array) - 1):
+        elif array[i] % 2 == 0 and i % 2 == 1:
+            for j in range(i, len(array)):
                 if array[j] % 2 == 0:
-                    continue
+                    tmpa = array[j]
+                    array[j] = tmp
+                    tmp = tmpa
                 else:
                     array[i] = array[j]
                     array[j] = tmp
+                    break
     return array
 
 
