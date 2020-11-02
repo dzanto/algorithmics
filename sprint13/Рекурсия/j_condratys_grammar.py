@@ -5,6 +5,7 @@ def solution(element):
         return print(0)
     elif element == 2:
         return print(1)
+
     k = int(math.sqrt(element)) + 1
     mid = 2 ** (k-1)
 

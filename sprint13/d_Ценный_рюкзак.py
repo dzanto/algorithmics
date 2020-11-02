@@ -6,7 +6,9 @@ for i in range(n):
     items.append([int(i) for i in input().split()])
 for i in range(len(items)):
     items[i].insert(0, i)
+print(items)
 items.sort(key=itemgetter(1), reverse=True)
+print(items)
 coast_dict = {}
 num = 0
 coast = 1
@@ -15,6 +17,7 @@ for i in items:
     if i[coast] not in coast_dict:
         coast_dict[i[coast]] = []
     coast_dict[i[coast]].append([i[num], i[weight]])
+print(coast_dict)
 bag = []
 for coast in coast_dict:
     coast_dict[coast].sort(key=itemgetter(1, 0))

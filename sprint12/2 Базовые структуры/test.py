@@ -1,2 +1,2 @@
-row = [1,2,3,4,5,6,7]
-print(row[::-1])
+row = range(5)
+print(row)
