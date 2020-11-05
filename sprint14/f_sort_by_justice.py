@@ -33,6 +33,13 @@ def quicksort(array):
 
 if __name__ == '__main__':
     n = input()
-    array = [int(i) for i in input().split()]
-    rez = quicksort(array)
-    print(' '.join(map(str, rez)))
+    if n == '0' or '':
+        print('')
+    else:
+        inp = input()
+        if inp == '0' or '':
+            print(inp)
+        else:
+            array = [int(i) for i in inp.split()]
+            rez = quicksort(array)
+            print(' '.join(map(str, rez)))
