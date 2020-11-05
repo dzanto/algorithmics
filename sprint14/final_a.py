@@ -19,5 +19,6 @@ def max_number(array):
 
 if __name__ == '__main__':
     n = input()
+    del n
     array = [i for i in input().split()]
     max_number(array)
