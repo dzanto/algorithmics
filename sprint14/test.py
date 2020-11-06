@@ -1,5 +1,3 @@
-dva = 2
-tri = 3
-print(dva, tri)
-dva, tri = tri, dva
-print(dva, tri)
+for i in range(3):
+    print(i)
+    print(i % 10)
