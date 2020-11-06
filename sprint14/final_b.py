@@ -5,9 +5,9 @@ def radix_sort(array):
     rang = 10
     for i in range(length):
         b = [[] for k in range(rang)]
-    for x in array:
-        figure = x // 10 ** i % 10
-        b[figure].append(x)
+        for x in array:
+            figure = x // 10 ** i % 10
+            b[figure].append(x)
         a = []
         for k in range(rang):
             a = a + b[k]
