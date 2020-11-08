@@ -1,21 +1,22 @@
-# 39337938
+# 39485470
+
+
 def radix_sort(array):
-    print(array)
     length = len(str(max(array)))
     rang = 10
     for i in range(length):
         b = [[] for k in range(rang)]
         for x in array:
-            figure = x // 10 ** i % 10
-            b[figure].append(x)
-        a = []
+            digit = x // 10 ** i % 10
+            b[digit].append(x)
+        array = []
         for k in range(rang):
-            a = a + b[k]
-    print(a)
+            array += b[k]
+    return array
 
 
 if __name__ == '__main__':
-    n = input()
-    del n
+    input()
     array = [int(i) for i in input().split()]
-    radix_sort(array)
+    sorted_array = radix_sort(array)
+    print(' '.join(map(str, sorted_array)))

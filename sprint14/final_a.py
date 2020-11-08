@@ -1,10 +1,7 @@
-# 39329479
+# 39485149
 
 
 class BiggestCompare(str):
-
-    def __new__(cls, word):
-        return str.__new__(cls, word)
 
     def __lt__(self, other):
         right = int(self + other)
@@ -14,11 +11,11 @@ class BiggestCompare(str):
 
 def max_number(array):
     sorted_array = sorted(array, key=BiggestCompare)
-    print(''.join(sorted_array))
+    return sorted_array
 
 
 if __name__ == '__main__':
-    n = input()
-    del n
+    input()
     array = [i for i in input().split()]
-    max_number(array)
+    sorted_array = max_number(array)
+    print(''.join(sorted_array))
