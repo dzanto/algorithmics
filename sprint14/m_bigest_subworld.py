@@ -12,7 +12,13 @@ def get_world(string, words):
                 work_words[num_wrd].pop()
                 cnt_list[num_wrd] += 1
 
+    for i in range(len(cnt_list)):
+        if cnt_list[i] != len(words[i]):
+            cnt_list[i] = 0
+
     max_world = max(cnt_list)
+    if max_world == 0:
+        return ''
     max_worlds = []
     for i in range(len(cnt_list)):
         if cnt_list[i] == max_world:
