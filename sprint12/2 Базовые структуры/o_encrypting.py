@@ -1,28 +1,10 @@
-import queue
-import copy
-
-
 def encrypt(string, template):
 
-    dic_templ = {i: 0 for i in template}
-    work_dic = copy.deepcopy(dic_templ)
-    for i in template:
-        dic_templ[i] += 1
-
-    q = queue.Queue(maxsize=len(template))
-    for i in template:
-        q.put(0)
-
+    template.sort()
     count = 0
-
-    for i in string:
-        q_get = q.get()
-        if q_get in template:
-            work_dic[q_get] -= 1
-        if i in template:
-            work_dic[i] += 1
-        q.put(i)
-        if work_dic == dic_templ:
+    for i in range(len(string) - len(template) + 1):
+        sorted_slice = sorted(string[i:(i+len(template))])
+        if sorted_slice == template:
             count += 1
     return count
 

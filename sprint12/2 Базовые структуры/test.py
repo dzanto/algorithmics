@@ -1,2 +1,2 @@
-row = range(5)
+row = [None for i in range(5)]
 print(row)
