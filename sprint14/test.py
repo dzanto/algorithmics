@@ -1,3 +1,2 @@
-for i in range(3):
-    print(i)
-    print(i % 10)
+i = [0] * 9
+print(i)
